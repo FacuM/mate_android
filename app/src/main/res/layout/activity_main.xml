@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/mate_image_main"
+        android:layout_width="match_parent"
+        android:layout_height="450sp"
+        android:contentDescription="@string/logo_description"
+        android:src="@drawable/img_argentinidadalpalisimo"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="10sp" />
+
+    <Button
+        android:id="@+id/mate_button_notify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_notify"
+        android:layout_below="@+id/mate_image_main"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible" />
+
+    <ProgressBar
+        android:id="@+id/mate_progressbar_main"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_below="@+id/mate_image_main"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/mate_tv_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:visibility="visible"
+        android:layout_below="@+id/mate_progressbar_main" />
+
+</RelativeLayout>

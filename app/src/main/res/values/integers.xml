@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="server_port">26566</integer>
+    <integer name="server_timeout_ms">32</integer>
+    <integer name="server_ip_range_min">100</integer>
+    <integer name="server_ip_range_max">255</integer>
+</resources>

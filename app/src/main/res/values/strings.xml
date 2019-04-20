@@ -1,0 +1,18 @@
+<resources>
+
+    <!-- Readable strings -->
+    <string name="app_name">Mate</string>
+    <string name="logo_description">Logo</string>
+    <string name="button_notify">Notificar mate listo</string>
+    <string name="server_status_unknown_host">Host desconocido, ¿tenés internet?</string>
+    <string name="server_status_io_exception">Hubo un problema en el servidor, ¿querés probar otra vez?</string>
+    <string name="server_status_connect_pass">¡Enviado!</string>
+    <string name="server_status_discovery_loading">Descubriendo un servidor…</string>
+    <string name="server_status_discovery_loading_ip">Descubriendo un servidor… (probando con %1$s)</string>
+    <string name="server_status_discovery_none">No pude encontrar un servidor en tu red.</string>
+    <string name="server_status_network_info_exception">No tengo suficientes permisos, ¿tu dispositivo está modificado?</string>
+    <string name="button_notify_as_retry">Reintentar</string>
+
+    <!-- Keys -->
+    <string name="server_ip_key">server_ip</string>
+</resources>
