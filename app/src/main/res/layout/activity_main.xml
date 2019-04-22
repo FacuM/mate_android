@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/mate_image_main"
         android:layout_width="match_parent"
-        android:layout_height="450sp"
+        android:layout_height="400sp"
         android:contentDescription="@string/logo_description"
         android:src="@drawable/img_argentinidadalpalisimo"
         android:layout_alignParentTop="true"

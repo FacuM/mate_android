@@ -50,15 +50,25 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("StaticFieldLeak")
     private class AsyncServerDiscovery extends AsyncTask<Void, Void, Boolean>
     {
-        @SuppressLint("WrongThread")
+        private String currentIp;
+
         @Override
         protected Boolean doInBackground(Void... voids) {
             if (serverIp != null && testIp(serverIp)) {
-                mProgressBar.setVisibility(View.INVISIBLE);
-                mNotifyButton.setVisibility(View.VISIBLE);
+                runOnUiThread(new Runnable() {
+                    public void run() {
+                        mProgressBar.setVisibility(View.INVISIBLE);
+                        mNotifyButton.setVisibility(View.VISIBLE);
+                    }
+                });
                 Log.d(TAG, "doInBackground: the server at " + serverIp + " is working.");
             } else {
-                mServerStatus.setText(getString(R.string.server_status_discovery_loading));
+
+                runOnUiThread(new Runnable() {
+                    public void run() {
+                        mServerStatus.setText(getString(R.string.server_status_discovery_loading));
+                    }
+                });
 
                 Log.d(TAG, "doInBackground: miIpAsArray: size: " + mIpAsArray.length + ".");
 
@@ -66,15 +76,23 @@ public class MainActivity extends AppCompatActivity {
 
                 for (int i = IP_RANGE_MIN; i <= IP_RANGE_MAX; i++)
                 {
-                    String currentIp = concatIp + i;
+                    currentIp = concatIp + i;
                     Log.d(TAG, "doInBackground: testing... " + currentIp);
-                    mServerStatus.setText(getString(R.string.server_status_discovery_loading_ip, currentIp));
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+                            mServerStatus.setText(getString(R.string.server_status_discovery_loading_ip, currentIp));
+                        }
+                    });
 
                     if (testIp(currentIp))
                     {
                         serverIp = currentIp;
                         Log.d(TAG, "doInBackground: server found.");
-                        mServerStatus.setVisibility(View.INVISIBLE);
+                        runOnUiThread(new Runnable() {
+                            public void run() {
+                                mServerStatus.setVisibility(View.INVISIBLE);
+                            }
+                        });
                         break;
                     }
                 }
